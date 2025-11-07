@@ -14,7 +14,7 @@ Since these changes require repository administration privileges, they must be d
 
 ### Option 1: Using GitHub Web Interface
 
-1. Navigate to the repository: https://github.com/cmip-ipo-internal/citation-mapper
+1. Navigate to the repository: https://github.com/cmip-ipo-internal/WCRP-citations
 2. Click on the branch dropdown (currently showing the default branch)
 3. Type `src-data` in the "Find or create a branch" field
 4. Click "Create branch: src-data from [current-branch]"
@@ -30,17 +30,17 @@ With appropriate repository permissions:
 
 ```bash
 # Create src-data branch
-gh api repos/cmip-ipo-internal/citation-mapper/git/refs \
+gh api repos/cmip-ipo-internal/WCRP-citations/git/refs \
   -f ref='refs/heads/src-data' \
   -f sha='<commit-sha>'
 
 # Create production branch
-gh api repos/cmip-ipo-internal/citation-mapper/git/refs \
+gh api repos/cmip-ipo-internal/WCRP-citations/git/refs \
   -f ref='refs/heads/production' \
   -f sha='<commit-sha>'
 
 # Set src-data as default branch
-gh api repos/cmip-ipo-internal/citation-mapper \
+gh api repos/cmip-ipo-internal/WCRP-citations \
   -X PATCH \
   -f default_branch='src-data'
 ```
@@ -71,7 +71,7 @@ After completing these steps:
 
 2. Verify the default branch is `src-data`:
    - Check on GitHub web interface
-   - Or use: `gh repo view cmip-ipo-internal/citation-mapper --json defaultBranchRef`
+   - Or use: `gh repo view cmip-ipo-internal/WCRP-citations --json defaultBranchRef`
 
 ## Notes
 
